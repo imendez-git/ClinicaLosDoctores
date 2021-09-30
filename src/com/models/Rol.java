@@ -10,5 +10,6 @@ package com.models;
  * @author isram
  */
 public class Rol {
-    
+    int idRol;
+    String rol; 
 }
