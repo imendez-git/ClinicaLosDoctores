@@ -121,6 +121,7 @@ public class Usuarios implements Serializable {
         this.edad = edad;
         changeSupport.firePropertyChange("edad", oldEdad, edad);
     }
+    
 
     @Override
     public int hashCode() {

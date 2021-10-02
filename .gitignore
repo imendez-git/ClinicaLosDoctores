@@ -2,3 +2,4 @@
 /build/
 src/com/vistas/frmCitas.java
 src/com/dao/Citas.java
+/dist/
