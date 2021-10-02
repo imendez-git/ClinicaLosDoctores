@@ -25,7 +25,7 @@ public class frmSingin extends JPanel {
             entityManager.getTransaction().begin();
         }
         
-        com.dao.Usuarios u = new com.dao.Usuarios();
+        com.controladores.Usuarios u = new com.controladores.Usuarios();
         entityManager.persist(u);
         list.add(u);
         int row = list.size() - 1;
@@ -113,8 +113,6 @@ public class frmSingin extends JPanel {
         edadLabel.setForeground(new java.awt.Color(255, 255, 255));
         edadLabel.setText("Edad:");
 
-        idUsuarioField.setText("1");
-
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.idUsuario}"), idUsuarioField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
@@ -132,8 +130,6 @@ public class frmSingin extends JPanel {
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), claveField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
-
-        idRolField.setText("1");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.idRol}"), idRolField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("1");
@@ -159,13 +155,13 @@ public class frmSingin extends JPanel {
         saveButton.addActionListener(formListener);
 
         jButton1.setBackground(new java.awt.Color(0, 255, 204));
-        jButton1.setText("Cancelar");
-        jButton1.setActionCommand("Cancelar");
+        jButton1.setText("Cerrar");
         jButton1.addActionListener(formListener);
 
         jButton2.setBackground(new java.awt.Color(0, 255, 204));
         jButton2.setText("Login");
         jButton2.setActionCommand("LOGIN");
+        jButton2.addMouseListener(formListener);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -285,7 +281,7 @@ public class frmSingin extends JPanel {
 
     // Code for dispatching events from components to event handlers.
 
-    private class FormListener implements java.awt.event.ActionListener {
+    private class FormListener implements java.awt.event.ActionListener, java.awt.event.MouseListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             if (evt.getSource() == saveButton) {
@@ -294,6 +290,24 @@ public class frmSingin extends JPanel {
             else if (evt.getSource() == jButton1) {
                 frmSingin.this.jButton1ActionPerformed(evt);
             }
+        }
+
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            if (evt.getSource() == jButton2) {
+                frmSingin.this.jButton2MouseClicked(evt);
+            }
+        }
+
+        public void mouseEntered(java.awt.event.MouseEvent evt) {
+        }
+
+        public void mouseExited(java.awt.event.MouseEvent evt) {
+        }
+
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+        }
+
+        public void mouseReleased(java.awt.event.MouseEvent evt) {
         }
     }// </editor-fold>//GEN-END:initComponents
 
@@ -306,8 +320,8 @@ public class frmSingin extends JPanel {
         } catch (RollbackException rex) {
             rex.printStackTrace();
             entityManager.getTransaction().begin();
-            List<com.dao.Usuarios> merged = new ArrayList<com.dao.Usuarios>(list.size());
-            for (com.dao.Usuarios u : list) {
+            List<com.controladores.Usuarios> merged = new ArrayList<com.controladores.Usuarios>(list.size());
+            for (com.controladores.Usuarios u : list) {
                 merged.add(entityManager.merge(u));
             }
             list.clear();
@@ -319,6 +333,11 @@ public class frmSingin extends JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0); 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        new frmLogin().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -318,9 +318,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="idUsuarioField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="1"/>
-      </Properties>
       <BindingProperties>
         <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.idUsuario}" target="idUsuarioField" targetPath="text" updateStrategy="0" immediately="false">
           <Property name="incompletePathValue" type="java.lang.String" value="null"/>
@@ -347,9 +344,6 @@
       </BindingProperties>
     </Component>
     <Component class="javax.swing.JTextField" name="idRolField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="1"/>
-      </Properties>
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="idRol"/>
       </AccessibilityProperties>
@@ -400,8 +394,7 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="ff" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cancelar"/>
-        <Property name="actionCommand" type="java.lang.String" value="Cancelar"/>
+        <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -415,6 +408,9 @@
         <Property name="text" type="java.lang.String" value="Login"/>
         <Property name="actionCommand" type="java.lang.String" value="LOGIN"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
