@@ -5,8 +5,10 @@
         <group>
             <file>file:/D:/GitHub/ClinicaLosDoctores/src/com/models/Rol.java</file>
             <file>file:/D:/GitHub/ClinicaLosDoctores/.git/config</file>
+            <file>file:/D:/GitHub/ClinicaLosDoctores/src/com/vistas/frmCitas.java</file>
             <file>file:/D:/GitHub/ClinicaLosDoctores/src/com/dao/Usuarios.java</file>
             <file>file:/D:/GitHub/ClinicaLosDoctores/src/com/models/Usuario.java</file>
+            <file>file:/D:/GitHub/ClinicaLosDoctores/src/com/dao/Citas.java</file>
             <file>file:/D:/GitHub/ClinicaLosDoctores/src/META-INF/persistence.xml</file>
             <file>file:/D:/GitHub/ClinicaLosDoctores/src/com/vistas/frmUsuarios.java</file>
         </group>
